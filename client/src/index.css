@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  html{
+    @apply p-0 m-0 box-border
+  }
+  
+  body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    @apply text-white  bg-slate-800
+  }
+  #root{
+    @apply min-h-screen flex flex-col
+  }
+}
+
+@layer components{
+  .isSticky{
+    @apply fixed top-0 w-full z-50;
+    @apply animate-[fadeIn_.3s_linear]
+  }
+
+  #root:has(.header.isSticky){
+    padding-top: 80px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    top: -100px;
+  }
+  to{
+    top: 0
+  }
+}
